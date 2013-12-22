@@ -6,7 +6,9 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2",
     "handlebars": "~1.1.2",
-    "listjs": "~1.0.0"
+    "listjs": "~1.0.0",
+    "momentjs": "~2.4.0",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {}
 }
