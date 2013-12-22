@@ -1,5 +1,5 @@
 $(function() {
-  $.getJSON('http://localhost:8011', function(data) {
+  $.getJSON('http://boiler-plugins-list.herokuapp.com', function(data) {
     var plugins   = $('#tmpl-plugins').html();
     var pluginsTemplate = Handlebars.compile(plugins);
 
