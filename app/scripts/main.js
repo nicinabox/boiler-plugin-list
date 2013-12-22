@@ -21,3 +21,8 @@ $(function() {
   });
 
 });
+
+$(document).on('click', '#install-boiler-btn', function(e) {
+  e.preventDefault();
+  $(this.hash).toggleClass('hidden');
+});

@@ -11,7 +11,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 .container {
-  width: 600px;
+  max-width: 600px;
 }
 
 .plugin {
@@ -26,6 +26,12 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     pre {
       @include opacity(1);
     }
+  }
+}
+
+#install-boiler {
+  pre {
+    @include border-radius(0);
   }
 }
 
