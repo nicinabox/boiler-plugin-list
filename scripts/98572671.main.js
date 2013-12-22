@@ -1,1 +1,0 @@
-$(function(){$.getJSON("http://boiler-plugins-list.herokuapp.com",function(a){var b=$("#tmpl-plugins").html(),c=Handlebars.compile(b),d=$("#tmpl-search").html(),e=Handlebars.compile(d);$("form").html(e({count:a.length})),$("#plugins").html(c({plugins:a}));new List("plugin-list",{valueNames:["name","description"]})})});

@@ -1,16 +1,20 @@
 <!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>boiler registry</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/4ed9e316.main.css><script src=bower_components/modernizr/modernizr.js></script><body><!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]--><div class=container><div class="row header"><div class=col-xs-12><h3>boiler registry</h3></div></div><div class=row><div class=col-xs-12 id=plugin-list><form action=""></form><div id=plugins class=list>Herding unicorns...</div></div></div><div id=footer><p>♥ from <a href=http://twitter.com/nicinabox>nicinabox</a></p></div></div><script type=text/x-handlebars-template id=tmpl-search><input type="search" placeholder="Search {{count}} plugins..." class="form-control search"></script><script type=text/x-handlebars-template id=tmpl-plugins>{{#each plugins}}
+        <![endif]--><div class=container><div class="row header"><div class=col-xs-12><h2>Boiler</h2><p class=lead>Discover and install unRAID plugins easily</p></div></div><div class=row><div class=col-xs-12 id=plugin-list><form action=""></form><div id=plugins class=list>Herding unicorns...</div></div></div><div id=footer><p>♥ from <a href=http://twitter.com/nicinabox>nicinabox</a></p></div></div><script type=text/x-handlebars-template id=tmpl-search><input type="search" placeholder="Search {{count}} plugins..." class="form-control search" autofocus></script><script type=text/x-handlebars-template id=tmpl-plugins>{{#each plugins}}
             <div class="plugin">
               <header class="row">
-                <div class="col-xs-6">
+                <div class="col-xs-9">
                   <strong class="h4 name"><a href="{{website}}">{{name}}</a></strong>
+                  <small class="text-muted" >by {{owner}}</small>
                 </div>
-                <div class="col-xs-6 text-right">
+                <div class="col-xs-3 text-right">
                   <span class="text-muted">{{stars}} <span class="glyphicon glyphicon-star"></span></span>
                 </div>
               </header>
-              <p class="text-muted description">{{description}}</p>
+              <p class=" description">{{description}}</p>
               <pre>boiler install {{name}}</pre>
+              <small class="text-muted">
+                Updated {{updated_ago}}
+              </small>
             </div>
-          {{/each}}</script><script src=scripts/65909824.vendor.js></script><script src=scripts/98572671.main.js></script><script src=scripts/d41d8cd9.plugins.js></script>
+          {{/each}}</script><script src=scripts/42313054.vendor.js></script><script src=scripts/69347d03.main.js></script><script src=scripts/d41d8cd9.plugins.js></script>
