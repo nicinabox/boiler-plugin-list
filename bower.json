@@ -1,0 +1,12 @@
+{
+  "name": "boiler-addons",
+  "private": true,
+  "dependencies": {
+    "sass-bootstrap": "~3.0.0",
+    "modernizr": "~2.6.2",
+    "jquery": "~1.10.2",
+    "handlebars": "~1.1.2",
+    "listjs": "~1.0.0"
+  },
+  "devDependencies": {}
+}
