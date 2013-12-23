@@ -1,4 +1,9 @@
 $(function() {
+  var query = '';
+  if (window.location.hash) {
+    query = window.location.hash.replace('#', '')
+  }
+
   $.getJSON('http://boiler-plugins-list.herokuapp.com', function(data) {
     var plugins   = $('#tmpl-plugins').html();
     var pluginsTemplate = Handlebars.compile(plugins);
@@ -12,12 +17,15 @@ $(function() {
 
     data = _.sortBy(data, 'updated').reverse();
 
-    $('form').html(searchTemplate({ count: data.length }));
+    $('form').html(searchTemplate({ count: data.length, value: query }));
     $('#plugins').html(pluginsTemplate({ plugins: data }));
 
     var pluginList = new List('plugin-list', {
       valueNames: [ 'name', 'description' ]
     });
+    if (query) {
+      pluginList.search(query);
+    }
   });
 
 });
