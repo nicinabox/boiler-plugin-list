@@ -1,7 +1,9 @@
 $(function() {
-  var query = '';
-  if (window.location.hash) {
-    query = window.location.hash.replace('#', '')
+  var search, params, query;
+  if (window.location.search) {
+    search = window.location.search.replace('?', '');
+    params = search.split('=');
+    query  = params[1];
   }
 
   $.getJSON('http://boiler-plugins-list.herokuapp.com', function(data) {
