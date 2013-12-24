@@ -13,8 +13,8 @@ $(function() {
     var search = $('#tmpl-search').html();
     var searchTemplate = Handlebars.compile(search);
 
-    _.each(data, function(i) {
-      i.updated_ago = moment(i.updated).fromNow()
+    _.each(data, function(plugin) {
+      plugin.updated_ago = moment(plugin.updated).fromNow()
     });
 
     data = _.sortBy(data, 'updated').reverse();
@@ -23,7 +23,7 @@ $(function() {
     $('#plugins').html(pluginsTemplate({ plugins: data }));
 
     var pluginList = new List('plugin-list', {
-      valueNames: [ 'name', 'description' ]
+      valueNames: [ 'name', 'description', 'updated', 'stars' ]
     });
     if (query) {
       pluginList.search(query);

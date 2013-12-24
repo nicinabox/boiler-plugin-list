@@ -40,3 +40,40 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   font-size: 13px;
   color: #aaa;
 }
+
+.sort-options {
+  @include clearfix;
+}
+.sort {
+  display: inline-block;
+  padding: 0 5px;
+  > span {
+    span {
+      display: none;
+      color: $gray-light;
+    }
+  }
+  &.asc, &.desc {
+    font-weight: bold;
+  }
+  &.asc {
+    > span {
+      span {
+        display: none;
+        + span {
+          display: inline;
+        }
+      }
+    }
+  }
+  &.desc {
+    > span {
+      span {
+        display: inline;
+        + span {
+          display: none;
+        }
+      }
+    }
+  }
+}
