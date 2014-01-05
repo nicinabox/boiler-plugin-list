@@ -62,59 +62,6 @@
 
   </div>
 
-  <script type="text/x-handlebars-template" id="tmpl-search">
-    <div class="form-group">
-      <input type="search" placeholder="Search {{count}} plugins..." class="form-control search" value="{{value}}" name="search" autofocus>
-    </div>
-    <p class="sort-options">
-      <span class="text-muted">Sort by: </span>
-
-      <a href="#" class="sort desc" data-sort="updated">
-        <span>
-          updated
-          <span>(newest)</span>
-          <span>(oldest)</span>
-        </span>
-      </a href="#">
-      <a href="#" class="sort" data-sort="name">
-        <span>
-          name
-          <span>(z-a)</span>
-          <span>(a-z)</span>
-        </span>
-      </a href="#">
-      <a href="#" class="sort" data-sort="stars">
-        <span>
-          stars
-          <span>(more)</span>
-          <span>(fewer)</span>
-        </span>
-      </a href="#">
-    </p>
-  </script>
-
-  <script type="text/x-handlebars-template" id="tmpl-plugins">
-    {{#each plugins}}
-      <div class="plugin">
-        <header class="row">
-          <div class="col-xs-9">
-            <strong class="h4"><a href="{{website}}" class="name">{{name}}</a></strong>
-            <small class="text-muted" >by {{owner}}</small>
-          </div>
-          <div class="col-xs-3 text-right">
-            <span class="text-muted stars">{{stars}} <span class="glyphicon glyphicon-star"></span></span>
-          </div>
-        </header>
-        <p class=" description">{{description}}</p>
-        <pre>boiler install {{name}}</pre>
-        <span class="updated hidden">{{updated}}</span>
-        <small class="text-muted">
-          Updated {{updated_ago}}
-        </small>
-      </div>
-    {{/each}}
-  </script>
-
   <script type="text/javascript">
     var _gauges = _gauges || [];
     (function() {
@@ -140,6 +87,7 @@
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
+  <script src="scripts/templates.js"></script>
   <script src="scripts/main.js"></script>
   <!-- endbuild -->
 

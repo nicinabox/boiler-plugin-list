@@ -9,11 +9,8 @@ $(function() {
   }
 
   $.getJSON(plugins_list_url, function(data) {
-    var plugins   = $('#tmpl-plugins').html();
-    var pluginsTemplate = Handlebars.compile(plugins);
-
-    var search = $('#tmpl-search').html();
-    var searchTemplate = Handlebars.compile(search);
+    var pluginsTemplate = JST['plugins'];
+    var searchTemplate = JST['search']
 
     _.each(data, function(plugin) {
       plugin.updated_ago = moment(plugin.updated).fromNow()

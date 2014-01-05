@@ -1,0 +1,19 @@
+{{#each plugins}}
+  <div class="plugin">
+    <header class="row">
+      <div class="col-xs-9">
+        <strong class="h4"><a href="{{website}}" class="name">{{name}}</a></strong>
+        <small class="text-muted" >by {{owner}}</small>
+      </div>
+      <div class="col-xs-3 text-right">
+        <span class="text-muted stars">{{stars}} <span class="glyphicon glyphicon-star"></span></span>
+      </div>
+    </header>
+    <p class=" description">{{description}}</p>
+    <pre>boiler install {{name}}</pre>
+    <span class="updated hidden">{{updated}}</span>
+    <small class="text-muted">
+      Updated {{updated_ago}}
+    </small>
+  </div>
+{{/each}}

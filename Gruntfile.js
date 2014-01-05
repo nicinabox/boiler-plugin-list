@@ -28,11 +28,18 @@ module.exports = function (grunt) {
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             js: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-                tasks: ['jshint'],
-                options: {
-                    livereload: true
-                }
+              files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+              tasks: ['jshint'],
+              options: {
+                livereload: true
+              }
+            },
+            templates: {
+              files: ['<%= yeoman.app %>/templates/{,*/}*.hbs'],
+              tasks: ['handlebars'],
+              options: {
+                livereload: true
+              }
             },
             jstest: {
                 files: ['test/spec/{,*/}*.js'],
@@ -348,7 +355,20 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
-        }
+        },
+
+        handlebars: {
+          options: {
+            processName: function(filePath) {
+              return filePath.replace(/^app\/templates\//, '').replace(/\.hbs$/, '');
+            }
+          },
+          all: {
+            files: {
+              "app/scripts/templates.js": ["app/templates/**/*.hbs"]
+            }
+          }
+      }
     });
 
 
