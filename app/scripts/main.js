@@ -1,12 +1,14 @@
 $(function() {
   var search, params, query;
+  var plugins_list_url = 'http://boiler-plugins-list.herokuapp.com'
+
   if (window.location.search) {
     search = window.location.search.replace('?', '');
     params = search.split('=');
     query  = params[1];
   }
 
-  $.getJSON('http://boiler-plugins-list.herokuapp.com', function(data) {
+  $.getJSON(plugins_list_url, function(data) {
     var plugins   = $('#tmpl-plugins').html();
     var pluginsTemplate = Handlebars.compile(plugins);
 
