@@ -8,10 +8,10 @@ $(function() {
     query  = params[1];
   }
 
-  $.getJSON(plugins_list_url, function(data) {
-    var pluginsTemplate = JST['plugins'];
-    var searchTemplate = JST['search']
+  var pluginsTemplate = JST['plugins'];
+  var searchTemplate = JST['search']
 
+  var populatePage = function(data) {
     _.each(data, function(plugin) {
       plugin.updated_ago = moment(plugin.updated).fromNow()
     });
@@ -26,6 +26,18 @@ $(function() {
     });
     if (query) {
       pluginList.search(query);
+    }
+  };
+
+  $.support.cors = true;
+  $.ajax({
+    url: plugins_list_url,
+    cache: false,
+    dataType: "json",
+    success: populatePage,
+    error: function (request, status, error) {
+      console.error(status + ", " + error);
+      jslogger.log(navigator.userAgent)
     }
   });
 
