@@ -36,6 +36,7 @@ $(function() {
     dataType: "json",
     success: populatePage,
     error: function (request, status, error) {
+      $('#plugins').html('There was an error loading the list :(');
       console.error(status + ", " + error);
       jslogger.log(navigator.userAgent)
     }
